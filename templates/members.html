@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3"><h1>Members</h1><a class="btn btn-primary" href="{{ url_for('new_member') }}">Add Member</a></div>
+<table class="table table-striped"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Join Date</th><th>Actions</th></tr></thead><tbody>
+{% for m in members %}<tr><td><a href="{{ url_for('member_detail', member_id=m.member_id) }}">{{ m.full_name }}</a></td><td>{{ m.email }}</td><td>{{ m.phone }}</td><td>{{ m.join_date }}</td><td><a class="btn btn-sm btn-outline-secondary" href="{{ url_for('edit_member', member_id=m.member_id) }}">Edit</a> <form class="d-inline" method="post" action="{{ url_for('delete_member', member_id=m.member_id) }}"><button class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete member?')">Delete</button></form></td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

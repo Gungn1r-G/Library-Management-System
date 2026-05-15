@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p><strong>Author:</strong> {{ book.author }} | <strong>Genre:</strong> {{ book.genre }} | <strong>ISBN:</strong> {{ book.isbn }} | <strong>Status:</strong> {{ 'Available' if book.is_available else 'Borrowed' }}</p>
+<h3>Loan History</h3>
+<table class="table"><thead><tr><th>Member</th><th>Loan Date</th><th>Due Date</th><th>Return Date</th><th>Status</th><th>Late Days</th></tr></thead><tbody>
+{% for loan in book.loans %}<tr><td>{{ loan.member.full_name }}</td><td>{{ loan.loan_date }}</td><td>{{ loan.due_date }}</td><td>{{ loan.return_date or '-' }}</td><td>{{ loan.status }}</td><td>{{ loan.late_days }}</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

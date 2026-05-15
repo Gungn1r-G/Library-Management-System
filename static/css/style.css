@@ -1,0 +1,4 @@
+body { background: #f6f7fb; }
+.card { border: 0; box-shadow: 0 0.25rem 1rem rgba(0,0,0,.06); }
+.stat h6 { color: #6c757d; text-transform: uppercase; letter-spacing: .04em; }
+.table { background: white; }

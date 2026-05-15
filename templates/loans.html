@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3"><h1>Loans</h1><a class="btn btn-primary" href="{{ url_for('new_loan') }}">Create Loan</a></div>
+<table class="table table-striped"><thead><tr><th>Member</th><th>Book</th><th>Loan Date</th><th>Due Date</th><th>Return Date</th><th>Status</th><th>Late Days</th><th>Actions</th></tr></thead><tbody>
+{% for l in loans %}<tr><td>{{ l.member.full_name }}</td><td>{{ l.book.title }}</td><td>{{ l.loan_date }}</td><td>{{ l.due_date }}</td><td>{{ l.return_date or '-' }}</td><td>{{ l.status }}</td><td>{{ l.late_days }}</td><td>{% if l.status == 'Borrowed' %}<form class="d-inline" method="post" action="{{ url_for('return_loan', loan_id=l.loan_id) }}"><button class="btn btn-sm btn-success">Return</button></form>{% endif %} <form class="d-inline" method="post" action="{{ url_for('delete_loan', loan_id=l.loan_id) }}"><button class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete loan?')">Delete</button></form></td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

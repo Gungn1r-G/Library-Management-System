@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ member.full_name }}</h1>
+<p><strong>Email:</strong> {{ member.email }} | <strong>Phone:</strong> {{ member.phone }} | <strong>Joined:</strong> {{ member.join_date }}</p>
+<h3>Loan History</h3>
+<table class="table"><thead><tr><th>Book</th><th>Loan Date</th><th>Due Date</th><th>Return Date</th><th>Status</th><th>Late Days</th></tr></thead><tbody>
+{% for loan in member.loans %}<tr><td>{{ loan.book.title }}</td><td>{{ loan.loan_date }}</td><td>{{ loan.due_date }}</td><td>{{ loan.return_date or '-' }}</td><td>{{ loan.status }}</td><td>{{ loan.late_days }}</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

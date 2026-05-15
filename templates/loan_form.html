@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Create Loan</h1>
+<form method="post" class="card card-body">
+  <label class="form-label">Member</label><select class="form-select mb-3" name="member_id" required>{% for m in members %}<option value="{{ m.member_id }}">{{ m.full_name }}</option>{% endfor %}</select>
+  <label class="form-label">Book</label><select class="form-select mb-3" name="book_id" required>{% for b in books %}<option value="{{ b.book_id }}">{{ b.title }}{% if not b.is_available %} (Borrowed){% endif %}</option>{% endfor %}</select>
+  <label class="form-label">Loan Date</label><input class="form-control mb-3" name="loan_date" type="date" required>
+  <label class="form-label">Due Date</label><input class="form-control mb-3" name="due_date" type="date" required>
+  <button class="btn btn-primary">Create Loan</button>
+</form>
+{% endblock %}
