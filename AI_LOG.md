@@ -57,3 +57,18 @@ Generated documentation examples and setup steps.
 
 My Changes:
 I rewrote sections and verified the instructions by running the project locally.
+
+---
+
+## Entry 5
+
+Tool Used: ChatGPT
+
+Prompt:
+Help me debug project setup issues and improve the application launcher.
+
+AI Output:
+Suggested fixes for PowerShell virtual environment activation, Git setup, and creating a batch file to automate project startup.
+
+My Changes:
+I tested the setup process on another computer, updated the README instructions, and verified that the launcher script successfully started the application.
