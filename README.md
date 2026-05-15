@@ -1,6 +1,6 @@
-# Library Management System
+# 📚 Library Management System
 
-## Project Description
+## 📖 Project Description
 
 This project is a web-based Library Management System developed using Python and Flask. The application is designed to help manage books, library members, and loan records using a relational database.
 
@@ -8,19 +8,33 @@ The system supports CRUD operations, relationship handling between tables, trans
 
 ---
 
-## Features
+## ✨ Key Features
 
+### 📚 Library Book Management
 - Add, update, and delete books
-- Manage library members
+- Store book metadata such as ISBN, author, genre, and publication date
+
+### 👥 Member Management
+- Manage member records and contact details
+- Maintain unique member entries
+
+### 🔖 Loan Tracking
 - Create and manage book loans
-- Prevent unavailable books from being loaned again
-- Dashboard with summary statistics
-- Server-side validation
-- Relational database structure in 3NF
+- Prevent unavailable books from being borrowed again
+- Track return status and overdue records
+
+### 📊 Dashboard Analytics
+- Display aggregate statistics using SQL functions
+- Show total books, members, loans, and late return averages
+
+### ✅ Validation and Integrity
+- Server-side validation for required fields
+- SQL constraints for data integrity
+- Relational schema normalized to 3NF
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - Python 3
 - Flask
@@ -29,13 +43,44 @@ The system supports CRUD operations, relationship handling between tables, trans
 - HTML5
 - CSS3
 - Bootstrap
+- Jinja2 Templates
+- Git & GitHub
 
 ---
 
-## Installation Instructions
+## 📂 Project Structure
 
+```text
+Library-Management-System/
+│
+├── app.py
+├── requirements.txt
+├── final_schema.sql
+├── AI_LOG.md
+├── NORMALIZATION.md
+├── README.md
+├── run_project.bat
+│
+├── templates/
+│   ├── base.html
+│   ├── dashboard.html
+│   ├── books.html
+│   ├── members.html
+│   ├── loans.html
+│   └── forms/
+│
+├── static/
+│   └── css/
+│       └── style.css
+│
+└── screenshots/
+```
 
-## Quick Start (Windows)
+---
+
+## ⚙️ Installation Instructions
+
+## 🚀 Quick Start (Windows)
 
 Windows users can run the application directly using:
 
@@ -50,7 +95,9 @@ This automatically:
 - starts the Flask server
 - opens the application in the browser
 
-## Python Requirement
+---
+
+## 🐍 Python Requirement
 
 Python 3 must be installed before running the project.
 
@@ -63,7 +110,11 @@ During installation, make sure to enable:
 ```text
 Add Python to PATH
 ```
-## Follow these instructions below for manual installation 
+
+---
+
+## ⚙️ Manual Installation
+
 ### 1. Clone the Repository
 
 ```bash
@@ -114,7 +165,7 @@ pip install -r requirements.txt
 
 ---
 
-## Database Setup
+## 💾 Database Setup
 
 The SQL schema file included in the project is:
 
@@ -150,7 +201,7 @@ exit()
 
 ---
 
-## Running the Application
+## ▶️ Running the Application
 
 Start the Flask server:
 
@@ -166,31 +217,32 @@ http://127.0.0.1:5000
 
 ---
 
-## Application Navigation
+## 🧭 Application Navigation
 
-### Dashboard
+### 📊 Dashboard
 View summary statistics for books, members, and active loans.
 
-### Books
+### 📚 Books
 Add, edit, update, and delete books.
 
-### Members
+### 👥 Members
 Manage library member records.
 
-### Loans
+### 🔖 Loans
 Create and view book loan records.
 
 ---
 
-## Validation and Transactions
+## 🔒 Validation and Transactions
 
 - Empty fields are restricted through server-side validation.
 - Loan transactions update book availability when a loan is created.
 - Unavailable books cannot be loaned again until returned.
+- SQL constraints help maintain relational data integrity.
 
 ---
 
-## Additional Files
+## 📁 Additional Files
 
 - `NORMALIZATION.md` → 3NF normalization report
 - `AI_LOG.md` → AI usage disclosure
@@ -198,35 +250,55 @@ Create and view book loan records.
 
 ---
 
-## Notes
+## 🖼️ Screenshots
+
+### 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### 📚 Books Page
+
+![Books](screenshots/books.png)
+
+---
+
+### 👥 Members Page
+
+![Members](screenshots/members.png)
+
+---
+
+### 🔖 Loans Page
+
+![Loans](screenshots/loans.png)
+
+---
+
+## 🔮 Future Improvements
+
+Possible future enhancements include:
+- Search and filtering functionality
+- Authentication and login system
+- Exporting reports to CSV or PDF
+- REST API support
+- Role-based access control
+- Advanced analytics and reporting
+
+---
+
+## 📝 Notes
 
 The `.gitignore` file excludes unnecessary folders such as:
 
 ```text
 venv/
 __pycache__/
+.env
+library.db
 ```
----
-## Screenshots
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
 
 ---
 
-### Books Page
-
-![Books](screenshots/books.png)
-
----
-
-### Members Page
-
-![Members](screenshots/members.png)
-
----
-
-### Loans Page
-
-![Loans](screenshots/loans.png)
+Developed as part of the CS665 Database Application Project.
