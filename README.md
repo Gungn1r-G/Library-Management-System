@@ -34,6 +34,21 @@ The system supports CRUD operations, relationship handling between tables, trans
 
 ## Installation Instructions
 
+## Quick Start (Windows)
+
+Windows users can run the application directly using:
+
+```text
+run_project.bat
+```
+
+This automatically:
+- creates the virtual environment
+- installs dependencies
+- creates the database if needed
+- starts the Flask server
+- opens the application in the browser
+
 ### 1. Clone the Repository
 
 ```bash
