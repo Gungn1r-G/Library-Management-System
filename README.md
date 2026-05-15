@@ -206,3 +206,27 @@ The `.gitignore` file excludes unnecessary folders such as:
 venv/
 __pycache__/
 ```
+---
+## Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### Books Page
+
+![Books](screenshots/books.png)
+
+---
+
+### Members Page
+
+![Members](screenshots/members.png)
+
+---
+
+### Loans Page
+
+![Loans](screenshots/loans.png)
