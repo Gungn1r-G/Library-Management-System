@@ -244,3 +244,71 @@ a:hover {
         transform: translateY(0);
     }
 }
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header p {
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+.dashboard-card {
+    border-radius: 20px;
+    padding: 24px;
+    color: white;
+    min-height: 160px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+    transition: 0.25s ease;
+    animation: fadeUp 0.35s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+}
+
+.dashboard-card h6 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    margin-bottom: 12px;
+}
+
+.dashboard-card h2 {
+    color: white;
+    font-size: 42px;
+    margin: 0;
+}
+
+.dashboard-icon {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.dashboard-blue {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.dashboard-green {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.dashboard-purple {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.dashboard-orange {
+    background: linear-gradient(135deg, #ea580c, #c2410c);
+}
+
+.empty-state {
+    padding: 24px;
+    text-align: center;
+    color: #64748b;
+    background: #f8fafc;
+    border-radius: 12px;
+}

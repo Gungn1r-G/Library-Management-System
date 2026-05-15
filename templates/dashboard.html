@@ -1,28 +1,113 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="mb-4">Summary Dashboard</h1>
-<div class="row g-3 mb-4">
-  <div class="col-md-3"><div class="card stat"><div class="card-body"><h6>Total Books</h6><div class="display-6">{{ total_books }}</div></div></div></div>
-  <div class="col-md-3"><div class="card stat"><div class="card-body"><h6>Total Members</h6><div class="display-6">{{ total_members }}</div></div></div></div>
-  <div class="col-md-3"><div class="card stat"><div class="card-body"><h6>Active Loans</h6><div class="display-6">{{ active_loans }}</div></div></div></div>
-  <div class="col-md-3"><div class="card stat"><div class="card-body"><h6>Avg Late Days</h6><div class="display-6">{{ avg_late_days }}</div></div></div></div>
+
+<div class="page-header mb-4">
+  <div>
+    <h1>Library Dashboard</h1>
+    <p class="text-muted">Overview of books, members, loans, and recent activity.</p>
+  </div>
 </div>
+
+<div class="row g-4 mb-4">
+  <div class="col-md-3">
+    <div class="dashboard-card dashboard-blue">
+      <div class="dashboard-icon">📚</div>
+      <h6>Total Books</h6>
+      <h2>{{ total_books }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="dashboard-card dashboard-green">
+      <div class="dashboard-icon">👥</div>
+      <h6>Total Members</h6>
+      <h2>{{ total_members }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="dashboard-card dashboard-purple">
+      <div class="dashboard-icon">🔖</div>
+      <h6>Active Loans</h6>
+      <h2>{{ active_loans }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="dashboard-card dashboard-orange">
+      <div class="dashboard-icon">⏱️</div>
+      <h6>Avg Late Days</h6>
+      <h2>{{ avg_late_days }}</h2>
+    </div>
+  </div>
+</div>
+
 <div class="row g-4">
-  <div class="col-md-5">
-    <div class="card"><div class="card-body">
-      <h5>Books by Genre</h5>
-      <table class="table"><thead><tr><th>Genre</th><th>Count</th></tr></thead><tbody>
-      {% for genre, count in books_by_genre %}<tr><td>{{ genre }}</td><td>{{ count }}</td></tr>{% endfor %}
-      </tbody></table>
-    </div></div>
+  <div class="col-lg-5">
+    <div class="card">
+      <div class="card-header">Books by Genre</div>
+      <div class="card-body">
+        {% if books_by_genre %}
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Genre</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for genre, count in books_by_genre %}
+            <tr>
+              <td>{{ genre }}</td>
+              <td><span class="badge bg-primary">{{ count }}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No book genres found.</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
-  <div class="col-md-7">
-    <div class="card"><div class="card-body">
-      <h5>Recent Loans</h5>
-      <table class="table"><thead><tr><th>Member</th><th>Book</th><th>Status</th><th>Due</th></tr></thead><tbody>
-      {% for loan in recent_loans %}<tr><td>{{ loan.member.full_name }}</td><td>{{ loan.book.title }}</td><td>{{ loan.status }}</td><td>{{ loan.due_date }}</td></tr>{% endfor %}
-      </tbody></table>
-    </div></div>
+
+  <div class="col-lg-7">
+    <div class="card">
+      <div class="card-header">Recent Loans</div>
+      <div class="card-body">
+        {% if recent_loans %}
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Book</th>
+              <th>Status</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for loan in recent_loans %}
+            <tr>
+              <td>{{ loan.member.full_name }}</td>
+              <td>{{ loan.book.title }}</td>
+              <td>
+                {% if loan.status == "Borrowed" %}
+                  <span class="badge bg-warning text-dark">Borrowed</span>
+                {% else %}
+                  <span class="badge bg-success">Returned</span>
+                {% endif %}
+              </td>
+              <td>{{ loan.due_date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No recent loans found.</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
+
 {% endblock %}
