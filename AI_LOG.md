@@ -1,15 +1,59 @@
 # AI_LOG.md
 
-## AI Tool Used
-ChatGPT
+## Entry 1
 
-## Purpose of AI Assistance
-AI was used as a coding assistant during development of the project. It helped with:
-- Flask route examples
-- SQL schema improvements
-- Debugging issues
-- CSS styling suggestions
-- README formatting
+Tool Used: ChatGPT
 
-## Verification and Modifications
-All generated code and suggestions were reviewed and modified before use. Additional testing and UI customization were performed manually to ensure the project matched the database structure and assignment requirements.
+Prompt:
+Help me build a basic Flask library management system with CRUD features.
+
+AI Output:
+Generated example Flask routes, templates, and database structure ideas.
+
+My Changes:
+I changed the project structure, tested the routes, and modified the database tables to fit my library system.
+
+---
+
+## Entry 2
+
+Tool Used: ChatGPT
+
+Prompt:
+Help me normalize my database into 3NF.
+
+AI Output:
+Explained functional dependencies and suggested separating books, members, and loans into different tables.
+
+My Changes:
+I reviewed the schema and updated the tables based on the normalization requirements.
+
+---
+
+## Entry 3
+
+Tool Used: ChatGPT
+
+Prompt:
+Help me improve the frontend styling using CSS.
+
+AI Output:
+Provided styling suggestions for tables, buttons, forms, and dashboard layout.
+
+My Changes:
+I changed colors, spacing, animations, and button styles to match the design I wanted.
+
+---
+
+## Entry 4
+
+Tool Used: ChatGPT
+
+Prompt:
+Help me write the README and setup instructions.
+
+AI Output:
+Generated documentation examples and setup steps.
+
+My Changes:
+I rewrote sections and verified the instructions by running the project locally.
