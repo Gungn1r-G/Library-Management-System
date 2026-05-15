@@ -34,6 +34,7 @@ The system supports CRUD operations, relationship handling between tables, trans
 
 ## Installation Instructions
 
+
 ## Quick Start (Windows)
 
 Windows users can run the application directly using:
@@ -49,6 +50,20 @@ This automatically:
 - starts the Flask server
 - opens the application in the browser
 
+## Python Requirement
+
+Python 3 must be installed before running the project.
+
+Download Python from:
+
+https://www.python.org/downloads/
+
+During installation, make sure to enable:
+
+```text
+Add Python to PATH
+```
+## Follow these instructions below for manual installation 
 ### 1. Clone the Repository
 
 ```bash
